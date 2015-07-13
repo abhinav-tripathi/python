@@ -9,9 +9,16 @@ APP = Flask(__name__)
 
 @APP.route('/')
 def index():
-    """ Displays the index page accessible at '/'
-    """
-    return render_template('index.html')
+    user = {'nickname':'abhinav tripathi'} #fake user
+    return render_template('index.html',
+        user=user,
+        title="Home",
+        posts = [{
+                'author':'test1',
+                'content':'lorem lipsum'
+                }]
+        )
+
 
 @APP.route('/hello/')
 def hello():

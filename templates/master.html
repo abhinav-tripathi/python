@@ -2,14 +2,24 @@
 <html lang='en'>
 <head>
   <meta charset="utf-8" />
-  <title>{% block title %}{% endblock %} - Hello Flask!</title>
+  {% if title %}
+  <title>
+  	{{title}}
+  </title>
+  {% else %}
+  <title>
+  	Welcome
+  </title>
+  {% endif %}
   <link type="text/css" rel="stylesheet"
        href="{{ url_for('static',
-                        filename='hello.css')}}" />
+                        filename='style.css')}}" />
 </head>
 <body>
-
-{% block body %}{% endblock %}
-
+<h1>Hello : 
+{% block body %}
+{{user.nickname}}
+{% endblock %}
+</h1>
 </body>
 </html>
