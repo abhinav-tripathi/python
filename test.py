@@ -17,7 +17,7 @@
 #     print get_country(db)
 from pymongo import MongoClient
 client = MongoClient()
-db = client.test
-cursor = db.restaurants.find({"restaurant_id" : "40361606"})
+db = client.tutDbs
+cursor = db.post.find()
 for document in cursor:
     print(document)
